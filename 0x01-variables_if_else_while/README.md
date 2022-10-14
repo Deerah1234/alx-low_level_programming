@@ -1,1 +1,1 @@
-C variables if else while scripts
+C - variables, if, else and while scripts
