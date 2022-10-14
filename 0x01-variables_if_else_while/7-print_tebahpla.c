@@ -13,7 +13,7 @@ int main(void)
 	char alphabet;
 
 	for (alphabet = 'z'; alphabet >= 'a'; alphabet--)
-		putchar(aplhabet);
+		putchar(alphabet);
 	putchar('\n');
 	return (0);
 }
