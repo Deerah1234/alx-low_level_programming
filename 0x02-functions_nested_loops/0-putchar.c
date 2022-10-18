@@ -10,7 +10,7 @@
   */
 int main(void)
 {
-	char ch[] = {"_", "p", "u", "c", "h", "a", "r"};
+	char ch[8] = {"_", "p", "u", "c", "h", "a", "r"};
 	int idx;
 
 	for (idx = 0; idx < sizeof(ch); idx++)
