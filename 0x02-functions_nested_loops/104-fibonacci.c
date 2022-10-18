@@ -8,29 +8,25 @@
  *
  * Return: 0 Success
  */
-
 int main(void)
 {
-	int num1, num2, cunter, num;
-	int next_num;
+	long double prev, curr, temp;
+	int cunter;
 
-	num = 98;
-
-	for (cunter = 1; cunter <= num; cunter++)
+	prev = 1;
+	curr = 2;
+	cunter = 1;
+	printf("%.0Lf, %.0Lf, ", prev, curr);
+	while (cunter <= 96)
 	{
-		if (cunter == 98)
-		{
-			printf("%d, ", num2);
-		}
-		else
-		{
-			printf("%d, ", num2);
-			next_num = num1 + num2;
-			num1 = num2;
-			num2 = next_num;
-		}
+		temp = curr;
+		curr += prev;
+		prev = temp;
+		printf("%.0Lf", curr);
+		if (cunter != 96)
+			printf(", ");
+		++cunter;
 	}
 	printf("\n");
-
 	return (0);
 }
