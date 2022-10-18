@@ -16,7 +16,7 @@ int main(void)
 	prev = 1;
 	curr = 2;
 	printf("%ld, %ld, ", prev, curr);
-	while (i <= 48)
+	while (cunt <= 48)
 	{
 		temp = curr;
 		curr += prev;
