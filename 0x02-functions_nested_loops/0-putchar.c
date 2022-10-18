@@ -1,15 +1,15 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
   * main - Prints _putchar
   *
-  * Description: Using printf() function
-  * this prints _putchar to the stdout
+  * Description: Using _putchar function
+  * from "main.h" file this prints _putchar to the stdout
   *
   * Return: 0 (success)
   */
 int main(void)
 {
-	printf("_putchar\n");
+	_putchar("_putchar\n");
 	return (0);
 }
