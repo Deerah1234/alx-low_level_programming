@@ -10,6 +10,11 @@
   */
 int main(void)
 {
-	_putchar("_putchar\n");
+	char ch[] = {"_", "p", "u", "c", "h", "a", "r"};
+	int idx;
+
+	for (idx = 0; idx < sizeof(ch); idx++)
+		_putchar(ch);
+	_putchar('\n');
 	return (0);
 }
