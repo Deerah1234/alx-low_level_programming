@@ -12,7 +12,7 @@ void times_table(void)
 {
 	int cunter1, cunter2, product;
 
-	for (cunter = 0; cunter1 <= 9; cunter1++)
+	for (cunter1 = 0; cunter1 <= 9; cunter1++)
 	{
 		for (cunter2 = 0; cunter2 <= 9; ++cunter2)
 		{
