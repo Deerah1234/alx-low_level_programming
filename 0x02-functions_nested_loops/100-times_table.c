@@ -20,7 +20,7 @@ void print_times_table(int n)
 			for (cunter2 = 0; cunter2 <= n; cunter2++)
 			{
 				product = cunter1 * cunter2;
-				if (j != 0)
+				if (cunter2 != 0)
 				{
 					_putchar(',');
 					_putchar(' ');
