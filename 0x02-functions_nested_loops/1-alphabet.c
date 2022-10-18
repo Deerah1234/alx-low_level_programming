@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
   * main - Prints the print_alphabet statements
@@ -29,6 +29,6 @@ void print_alphabet(void)
 	char ch;
 
 	for (ch = 'a'; ch <= 'z'; ch++)
-		putchar(ch);
-	printf("\n");
+		_putchar(ch);
+	_putchar("\n");
 }
