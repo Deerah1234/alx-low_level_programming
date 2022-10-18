@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define LARGEST 10000000000
 
 /**
  * main - prints fibonnaci numbers
@@ -10,23 +11,32 @@
  */
 int main(void)
 {
-	long double prev, curr, temp;
-	int cunter;
+	unsigned long int frnt1 = 0, bck1 = 1, frnt2 = 0, bck2 = 2;
+	unsigned long int hold1, hold2, hold3;
+	int cunt;
 
-	prev = 1;
-	curr = 2;
-	cunter = 1;
-	printf("%.0Lf, %.0Lf, ", prev, curr);
-	while (cunter <= 98)
+	printf("%lu, %lu, ", bck1, bck2);
+	for (cunt = 2; cunt < 98; cunt++)
 	{
-		temp = curr;
-		curr += prev;
-		prev = temp;
-		printf("%.0Lf", curr);
-		if (cunter != 98)
+		if (bck1 + bck2 > LARGEST || frnt2 > 0 || frnt1 > 0)
+		{
+			hold1 = (bck1 + bck2) / LARGEST;
+			hold2 = (bck1 + bck2) % LARGEST;
+			hold3 = frnt1 + frnt2 + hold1;
+			frnt1 = frnt2, frnt2 = hold3;
+			bck1 = bck2, bck2 = hold2;
+			printf("%lu%010lu", frnt2, bck2);
+		}
+		else
+		{
+			hold2 = bck1 + bck2;
+			bk1 = bck2, bck2 = hold2;
+			printf("%lu", bck2);
+		}
+		if (count != 97)
 			printf(", ");
-		++cunter;
 	}
 	printf("\n");
 	return (0);
 }
+
