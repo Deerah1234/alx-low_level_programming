@@ -10,11 +10,14 @@
   */
 int main(void)
 {
-	char ch[8] = {"_", "p", "u", "c", "h", "a", "r"};
-	int idx;
-
-	for (idx = 0; idx < sizeof(ch); idx++)
-		_putchar(ch);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
 	_putchar('\n');
 	return (0);
 }
