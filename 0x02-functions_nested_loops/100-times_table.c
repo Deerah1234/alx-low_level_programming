@@ -1,8 +1,8 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_times_table - print a times table for a given number n
- * @n: the maximum number test case
+ * @n: the maximum number 
  *
  * Description: This function prints a times table for
  * a given argument passed to n parameter
@@ -15,9 +15,9 @@ void print_times_table(int n)
 
 	if (n >= 0 && n <= 15)
 	{
-		for (cunter1 = 0; cunter1 <= n; ++cunter1)
+		for (cunter1 = 0; cunter1 <= n; cunter1++)
 		{
-			for (cunter2 = 0; cunter2 <= n; ++cunter2)
+			for (cunter2 = 0; cunter2 <= n; cunter2++)
 			{
 				product = cunter1 * cunter2;
 				if (j != 0)
