@@ -30,10 +30,10 @@ int main(void)
 		else
 		{
 			hold2 = bck1 + bck2;
-			bk1 = bck2, bck2 = hold2;
+			bck1 = bck2, bck2 = hold2;
 			printf("%lu", bck2);
 		}
-		if (count != 97)
+		if (cunt != 97)
 			printf(", ");
 	}
 	printf("\n");
