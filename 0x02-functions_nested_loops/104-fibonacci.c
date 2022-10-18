@@ -17,13 +17,13 @@ int main(void)
 	curr = 2;
 	cunter = 1;
 	printf("%.0Lf, %.0Lf, ", prev, curr);
-	while (cunter <= 96)
+	while (cunter <= 98)
 	{
 		temp = curr;
 		curr += prev;
 		prev = temp;
 		printf("%.0Lf", curr);
-		if (cunter != 96)
+		if (cunter != 98)
 			printf(", ");
 		++cunter;
 	}
