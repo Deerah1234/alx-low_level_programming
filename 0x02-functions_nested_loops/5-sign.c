@@ -1,4 +1,4 @@
-#include "helberton.h"
+#include "main.h"
 
 /**
   * print_sign - print the sign of a number
