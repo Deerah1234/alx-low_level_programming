@@ -10,23 +10,27 @@
  */
 int main(void)
 {
-	int value;
+	int value = 1;
 
-	value = 1;
-	printf("%d", value);
-	for (value = 2; value <= 100; value)
+	while (value <= 100)
 	{
-		printf(" ");
-		if (value % 3 == 0 || value % 5 == 0)
+		if (value % 3 == 0 && value % 5 == 0)
+			printf("FizzBuzz ");
+		else if (value % 5 == 0)
 		{
-			if (value % 3 == 0)
-				printf("Fizz");
-			if (value % 5 == 0)
+			if (value == 100)
+			{
 				printf("Buzz");
+				printf("\n");
+			}
+			else
+				printf("Buzz ");
 		}
+		else if (value % 3 == 0)
+			printf("Fizz ");
 		else
-			printf("%d", value);
+			printf("%d ", value);
+	value++;
 	}
-	printf("\n");
 	return (0);
 }
