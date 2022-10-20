@@ -1,29 +1,29 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
  * print_diagonal - print a diagonal line
- * @n: number of diagonal lines
- *
- * Description: This function prints a diagonal line
- * that end with a new line
- *
- * Return: void (nothing)
+ * @n: number of lines
  */
 void print_diagonal(int n)
 {
-	int cunt, diagnl;
+	int i, j;
 
-	for (cunt = 1; cunt <= n; cunt++)
+	if (n <= 0)
 	{
-		if (n <= 0)
-			_putchar('\n');
-		for (diagnl = 1; diagnl <= cunt; diagnl++)
-		{
-			if (diagnl != cunt)
-				_putchar(' ');
-			else
-				_putchar('\\');
-		}
 		_putchar('\n');
+	}
+	else
+	{
+		for (i = 1; i <= n; ++i)
+		{
+			for (j = 1; j <= i; ++j)
+			{
+				if (j != i)
+					_putchar(' ');
+				else
+					_putchar('\\');
+			}
+			_putchar('\n');
+		}
 	}
 }
