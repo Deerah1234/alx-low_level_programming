@@ -11,22 +11,24 @@
  */
 void print_diagonal(int n)
 {
-	int cunt, diagnl;
+	int cunt = 0;
+	int diagnl = 0;
 
-	if (n <= 0)
-		_putchar('\n')
-	else
+	if (n > 0)
 	{
-		for (cunt = 1; cunt <= n; cunt++)
+		while (cunt < n)
 		{
-			for (diagnl = 1; diagnl <= cunt; diagnl++)
+			while (diagnl < cunt)
 			{
-				if (diagnl != cunt)
-					_putchar(' ');
-				else
-					_putchar('\\');
+				_putchar(' ');
+				diagnl++;
 			}
+			cunt++;
+			diagnl = 0;
+			_putchar('\\');
 			_putchar('\n');
 		}
 	}
+	else
+	_putchar('\n');
 }
