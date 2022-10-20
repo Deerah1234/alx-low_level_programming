@@ -13,22 +13,17 @@ void print_diagonal(int n)
 {
 	int cunt, diagnl;
 
-	if (n <= 0)
+	for (cunt = 1; cunt <= n; cunt++)
 	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (cunt = 1; cunt <= n; ++cunt)
-		{
-			for (diagnl = 1; diagnl <= i; ++diagnl)
-			{
-				if (diagnl != cunt)
-					_putchar(' ');
-				else
-					_putchar('\\');
-			}
+		if (n <= 0)
 			_putchar('\n');
+		for (diagnl = 1; diagnl <= cunt; diagnl++)
+		{
+			if (diagnl != cunt)
+				_putchar(' ');
+			else
+				_putchar('\\');
 		}
+		_putchar('\n');
 	}
 }
