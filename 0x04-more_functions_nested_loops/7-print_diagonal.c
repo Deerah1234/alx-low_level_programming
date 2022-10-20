@@ -19,9 +19,9 @@ void print_diagonal(int n)
 	}
 	else
 	{
-		for (cunt = 1; cunt <= n; cunt++)
+		for (cunt = 1; cunt <= n; ++cunt)
 		{
-			for (diagnl = 1; diagnl <= i; diagnl++)
+			for (diagnl = 1; diagnl <= i; ++diagnl)
 			{
 				if (diagnl != cunt)
 					_putchar(' ');
