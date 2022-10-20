@@ -13,7 +13,7 @@ void print_diagonal(int n)
 {
 	int cunt, diagnl;
 
-	if (n <= 10)
+	if (n <= 0)
 		_putchar('\n')
 	else
 	{
