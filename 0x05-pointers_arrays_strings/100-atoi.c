@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include "main.h"
+#include <stdio.h>
 
 /**
  * _atoi - converts a string to an integer
@@ -9,23 +10,33 @@
  *
  * Return: value of integer
  */
+
+
 int _atoi(char *s)
 {
-	int i, j, n, m;
+	int n, i, m;
 
-	i = n = 0;
 	m = 1;
-	while ((*(s + i) < '0' || *(s + i) > '9') && (*(s + i) != '\0'))
+	i = n = 0;
+	while ((s[i] < '0' || s[i] > '9') && s[i] != 0)
 	{
-		if (*(s + i) == '-')
-			m *= -1;
+		if (s[i] == '-')
+			m = m * -1;
 		i++;
 	}
-	j = i;
-	while ((*(s + j) >= '0') && (*(s + j) <= '9'))
+	while ((s[i] >= '0' && s[i] <= '9') && s[i] != 0)
 	{
-		n = n * 10 + m * (*(s + j) - '0');
-		j++;
+		if (n >= 0)
+		{
+			n = n * 10 - (s[i] - '0');
+			i++;
+		}
+		else
+		{
+			n = n * 10 - (s[i] - '0');
+			i++;
+		}
 	}
-	return (n);
+	m = m * -1;
+	return (n * m);
 }
