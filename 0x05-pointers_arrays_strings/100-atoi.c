@@ -1,69 +1,31 @@
 #include "holberton.h"
 
-int _pow(int base, int exp);
 /**
- * _atoi - convert a string to an integer
- * @str: the string to be converted
+ * _atoi - converts a string to an integer
+ * @s: string to convert
  *
  * Description: This function convert a given string
  * to an integer
  *
- * Return: converted integer
+ * Return: value of integer
  */
-int _atoi(char *str)
+int _atoi(char *s)
 {
-	unsigned int result;
-	int i, j, neg;
+	int i, j, n, m;
 
-	neg = 0;
-	result = 0;
-	j = -1;
-	for (i = 0; str[i] != '\0'; ++i)
+	i = n = 0;
+	m = 1;
+	while ((*(s + i) < '0' || *(s + i) > '9') && (*(s + i) != '\0'))
 	{
-		if (str[i] == '-')
-		{
-			if (neg == 0)
-				neg = 1;
-			else
-				neg = 0;
-		}
-		else if (str[i] >= '0' && str[i] <= '9')
-		{
-			for (j = i; str[j] != '\0'; ++j)
-			{
-				if (!(str[j] >= '0' && str[j] <= '9'))
-					break;
-			}
-			--j;
-			break;
-		}
+		if (*(s + i) == '-')
+			m *= -1;
+		i++;
 	}
-	for (; i <= j; ++i)
-		result += (str[i] - '0') * _pow(10, (j - i));
-	if (result != 0 && neg == 1)
-		result = -result;
-	return (result);
-}
-
-/**
- * _pow - compute the power a base to its exponent
- * @base: the base
- * @exp: the exponent
- *
- * Description: This function computes the power
- * of a given base to its exponent
- *
- * Return: the result integer
- */
-int _pow(int base, int exp)
-{
-	int result;
-
-	result = 1;
-	while (exp >= 1)
+	j = i;
+	while ((*(s + j) >= '0') && (*(s + j) <= '9'))
 	{
-		result *= base;
-		exp--;
+		n = n * 10 + m * (*(s + j) - '0');
+		j++;
 	}
-	return (result);
+	return (n);
 }
