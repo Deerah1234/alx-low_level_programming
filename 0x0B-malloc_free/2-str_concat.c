@@ -1,47 +1,42 @@
 #include <stdlib.h>
-#include "main.h"
+#include "holberton.h"
 
 /**
- * str_concat - concatenate two strings
- * @s1: first string
- * @s2: second string
+ * alloc_grid - create a multidimensional array initialized to 0
  *
- * Desciption: treat null strings as empty
+ * @width: width of the array
+ * @height: height of the array
  *
- * Return: pointer to concatenated string, NULL if it fails
+ * Return: pointer to the array, or NULL if negative dimensions provided
  */
-char *str_concat(char *s1, char *s2)
+int **alloc_grid(int width, int height)
 {
-	char *str;
-	int i, j, len1, len2;
+	int **matrix, i, j, fail;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	
-	len1 = len2 = 0;
-	while (s1[len1] != '\0')
-		len1++;
-	while (s2[len2] != '\0')
-		len2++;
-
-	str = malloc((len1 + len2 + 1) * sizeof(*s1));
-	if (str == NULL)
+	if (width <= 0 || height <= 0)
+		return (NULL);
+	matrix = (int **)malloc(height * sizeof(int *));
+	if (matrix == NULL)
 		return (NULL);
 
-	i = 0;
-	while (i < len1)
+	fail = 0;
+	for (i = 0; i < height; ++i)
 	{
-		str[i] = s1[i];
-		i++;
+		matrix[i] = malloc(width * sizeof(int));
+		if (matrix[i] == NULL)
+		{
+			fail = 1;
+			break;
+		}
+
+		for (j = 0; j < width; ++j)
+			matrix[i][j] = 0;
 	}
-	j = 0;
-	while (j <= len2)
+	if (fail)
 	{
-		str[i] = s2[j];
-		i++;
-		j++;
+		for (j = 0; j <= i; ++j)
+			free(matrix[j]);
+		free(matrix);
 	}
-	return (str);
+	return (matrix);
 }
